@@ -1,0 +1,37 @@
+﻿@model Movie
+
+<h2>Register a movie</h2>
+
+<p>Please make sure to fill out all of the fields with the correct information. If failing to input correct information, the registration will fail.</p>
+
+<form asp-action="Register" method="post">
+    <label asp-for="ID" class="control-label"></label>
+    <input asp-for="ID" class="form-control" />
+    <span asp-validation-for="ID" class="text-danger"></span>
+
+    <label asp-for="Title" class="control-label"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+
+    <label asp-for="Genre" class="control-label"></label>
+    <input asp-for="Genre" class="form-control" />
+    <span asp-validation-for="Genre" class="text-danger"></span>
+
+    <label asp-for="Year" class="control-label"></label>
+    <input asp-for="Year" class="form-control" />
+    <span asp-validation-for="Year" class="text-danger"></span>
+
+    <label asp-for="Runtime" class="control-label"></label>
+    <input asp-for="Runtime" class="form-control" />
+    <span asp-validation-for="Year" class="text-danger"></span>
+
+
+    <input type="submit" />
+
+</form>
+
+<p>@ViewBag.ErrorMessage</p>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
